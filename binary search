@@ -1,0 +1,29 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int binarysearch(int arr[], int l, int r, int k){
+    if(l<=r){
+        int mid= l+(r-l)/2;
+        if(arr[mid]==k){
+            return mid;
+        }
+        else if(arr[mid]<k){
+            binarysearch(arr, mid+1, r, k);
+        }
+        else{
+            binarysearch(arr, l, mid-1, k);
+        }
+    }
+    
+}
+
+int main() {
+    int arr[5]={9,40,70,100,800};
+    int key= 40;
+    cout<<binarysearch(arr, 0, 5, key);
+    
+    
+    
+
+    return 0;
+}
